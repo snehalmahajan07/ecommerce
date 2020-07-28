@@ -1,0 +1,60 @@
+<div class="main-header navbar-fixed-top">
+	<div class="header-menu">
+		<div class="header-mobile-nav-wrapper">
+			<button type="button" class="navbar-toggle" (click)="collapse = !collapse">
+				<span class="fa fa-bars fa-2x"></span>
+			</button>
+		</div>
+		<div class="header-logo-wrapper">
+			 <!--<img class="header-logo-image" src="./assets/imgs/logo.png" alt="Hero"> -->
+			 <h3>Logo</h3>
+		</div>
+		<div class="header-nav-wrapper">
+			<ul class="header-nav">
+				<!--<li class="header-nav-item">
+					<a routerLink="/">HOME</a>
+				</li> -->
+				<li class="header-nav-item">
+					<a routerLink="/">MEN<span class="fa fa-caret-down"></span></a>
+				</li>
+				<li class="header-nav-item">
+					<a routerLink="/">WOMEN</a>
+				</li>
+				<li class="header-nav-item">
+					<a routerLink="/">ELECTRONIC</a>
+				</li>
+				<li class="header-nav-item">
+					<a routerLink="/">CONTACT<span class="fa fa-caret-down"></span></a>
+				</li>
+			</ul>
+		</div>
+		<div class="header-cart-wrapper">
+			<div class="header-cart" (click)="toggleCartPopup($event)">
+				<div class="mobil-shopping-cart">
+					<span><i class="fa fa-shopping-cart fa-2x"></i> <span *ngIf="cart_num">( {{cart_num}} )</span></span>
+				</div>
+				<div class="header-cart-item">
+					<a href=""><i class="fa fa-shopping-cart fa-2x"></i><span *ngIf="cart_num">( {{cart_num}} )</span><span class="fa fa-caret-down"></span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<ul class="mobile-header-nav" *ngIf="collapse" (click)="collapse = !collapse">
+		<li>
+			<a routerLink="/">HOME</a>
+		</li>
+		<li>
+			<a routerLink="/">MEN</a>
+		</li>
+		<li>
+			<a routerLink="/">WOMEN</a>
+		</li>
+		<li>
+			<a routerLink="/">ELECTRONIC</a>
+		</li>
+		<li>
+			<a routerLink="/">CONTACT</a>
+		</li>
+	</ul>
+	<cart-popup></cart-popup>
+</div>
